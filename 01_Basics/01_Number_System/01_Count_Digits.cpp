@@ -2,6 +2,7 @@
 Problem: Count Digits
 Platform: Basic Maths / Striver A2Z
 Difficulty: Easy
+Practice Link: "https://www.geeksforgeeks.org/problems/count-digits5716/1"
 
 ==================================================
 Complexity Analysis:
