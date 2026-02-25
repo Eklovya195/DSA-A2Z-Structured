@@ -1,5 +1,5 @@
 /*
-Problem: Union of two sorted arrays
+Problem: intersection of two sorted arrays
 Platform: Array / Striver A2Z
 Difficulty: Easy
 Practice Link: "https://www.geeksforgeeks.org/problems/intersection-of-two-sorted-array-1587115620/1"
