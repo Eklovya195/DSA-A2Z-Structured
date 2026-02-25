@@ -145,7 +145,7 @@ int main(){
 Time Complexity: O(m+n), 
     Because at max i runs for n times and j runs for m times. When there are no
     common elements in arr1 and arr2 and all elements in arr1, arr2 are distinct.
-Space Complexity : O(m+n) 
+Space Complexity : O(m+n) {just for returning the answer}
     {If Space of Union ArrayList is considered}
     O(1) {If Space of union ArrayList is not considered}
 ==================================================
