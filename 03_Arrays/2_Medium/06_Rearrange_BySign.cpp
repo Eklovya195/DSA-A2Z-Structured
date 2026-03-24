@@ -210,6 +210,7 @@ int main(){
 }
 
 /*
+==================================================
 Time Complexity: O(2*N) 
     { The worst case complexity is O(2*N) which is a combination of O(N) of
     traversing the array to segregate into neg and pos array and O(N) for adding the elements alternatively
@@ -221,4 +222,5 @@ Explanation: The second O(N) is a combination of O(min(pos, neg)) + O(leftover e
     O(N) for the second part, and by adding the first part we get the total complexity of O(2*N).
 Space Complexity: O(N/2 + N/2) = O(N) 
     { N/2 space required for each of the positive and negative element arrays, where N = size of the array A}.
+==================================================
 */
