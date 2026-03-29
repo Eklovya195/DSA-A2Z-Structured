@@ -3,6 +3,8 @@ Problem:  Majority Elemet ||(>N/3 times) | Find the elements that appears more t
 Platform: Array / Striver A2Z
 Difficulty: Hard
 Practice Link: "https://leetcode.com/problems/majority-element-ii/description/"
+//similar problem
+Also refer: "https://leetcode.com/problems/majority-element/description/"
 ==================================================
 Input: nums = [3,2,3]
 Output: [3]
