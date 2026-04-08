@@ -17,7 +17,7 @@ Explanation: The subarrays having XOR of their elements as 6 are [4, 2], [4, 2, 
 #include <bits/stdc++.h>
 using namespace std;
 
-int SubArraySum(vector<int> &arr,int n,int k){
+int SubArrayXor(vector<int> &arr,int n,int k){
     int cnt = 0;
     for(int i=0;i<n;i++){
         for(int j=i;j<n;j++){
@@ -37,7 +37,7 @@ int main(){
     vector<int> arr = {1,1,1,1};
     int n = arr.size();
     int k = 4;
-    int ans = SubArraySum(arr,n,k);
+    int ans = SubArrayXor(arr,n,k);
     cout << ans;
     return 0;
 }
@@ -58,7 +58,7 @@ Space Complexity: O(1) as we are not using any extra space.
 #include <bits/stdc++.h>
 using namespace std;
 
-int SubArraySum(vector<int> &arr,int n,int k){
+int SubArrayXor(vector<int> &arr,int n,int k){
     int cnt = 0;
     for(int i=0;i<n;i++){
         int Xor = 0;
@@ -76,7 +76,7 @@ int main(){
     vector<int> arr = {4, 2, 2, 6, 4};
     int n = arr.size();
     int k = 6;
-    int ans = SubArraySum(arr,n,k);
+    int ans = SubArrayXor(arr,n,k);
     cout << ans;
     return 0;
 }
@@ -95,7 +95,7 @@ Space Complexity: O(1) as we are not using any extra space.
 #include <bits/stdc++.h>
 using namespace std;
 
-int SubArraySum(vector<int> &arr,int n,int k){
+int SubArrayXor(vector<int> &arr,int n,int k){
     int cnt = 0;
     map<int,int> mp;
     // mp<frontxor,cnt>
@@ -117,7 +117,7 @@ int main(){
     vector<int> arr = {4, 2, 2, 6, 4};
     int n = arr.size();
     int k = 6;
-    int ans = SubArraySum(arr,n,k);
+    int ans = SubArrayXor(arr,n,k);
     cout << ans;
     return 0;
 }
