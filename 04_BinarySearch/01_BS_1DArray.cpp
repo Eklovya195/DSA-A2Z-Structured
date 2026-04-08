@@ -1,6 +1,6 @@
 /*
 Problem:  Binary Seach
-Platform: Array / Striver A2Z
+Platform: Binary Search / Striver A2Z
 Difficulty: Easy
 Practice Link: "https://leetcode.com/problems/binary-search/description/"
 ==================================================
