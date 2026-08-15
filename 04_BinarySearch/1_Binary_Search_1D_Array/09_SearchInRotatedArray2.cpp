@@ -119,7 +119,18 @@ int main(){
 
 /*
 ==================================================
-Time Complexity: O(logN)
+Time Complexity:  Best Case : O(logN)
+    Worst Case: O(N)
+    Why?
+    When many duplicates are present:
+    Example:
+    [3,3,3,3,3,3,3,3]
+    Every time:
+    arr[low] == arr[mid] == arr[high]
+    So binary search degenerates to linear shrinking:
+    low++
+    high--
+    Thus worst-case = N/2 → O(N)
 Space Complexity: O(1)
 ==================================================
 */
