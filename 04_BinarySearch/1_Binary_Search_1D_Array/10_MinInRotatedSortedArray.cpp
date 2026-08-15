@@ -105,3 +105,12 @@ Time Complexity: O(log N)
 Space Complexity: O(1)
 ==================================================
 */
+
+/*
+just add a simple line after finding mid if you want to add 
+if(arr[low] <= arr[high]){
+    ans = min(ans,arr[low]);
+    break;
+}
+    this will run with slightly better time complexity
+*/
