@@ -12,6 +12,26 @@ Explanation: target = 2 occurs 4 times in the given array so the output is 4.
 ==================================================
 */
 
+//Brute Force (using linear Search)
+/*
+==================================================
+Time Complexity: O(N) in worst case
+Space Complexity: O(1)
+==================================================
+*/
+
+/*
+You have a sorted array of integers and a number X.
+Your job is to find how many times X occurs in the array.
+Because the array is sorted:
+● All occurrences of X will be together in a block.
+● If we find:
+○ first occurrence index
+○ last occurrence index
+Then:
+count = last - first + 1
+Binary search is perfect for finding first and last position efficiently.
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
