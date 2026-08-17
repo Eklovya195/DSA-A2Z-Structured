@@ -38,7 +38,7 @@ Complexity:
 
 
 
-//Cautious Approach(Time Limit Exceed therefor not used)
+//Cautious Approach(Time Limit Exceed therefore not used)
 /*
 #include <bits/stdc++.h>
 using namespace std;
