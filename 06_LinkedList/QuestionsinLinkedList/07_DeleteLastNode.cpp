@@ -1,10 +1,10 @@
 /*
 Problem:   Delete Last Node of a Doubly Linked List
-Problem Statement: Problem statement
-A doubly-linked list is a data structure that consists of sequentially linked nodes, and the nodes have reference to both the previous and the next nodes in the sequence of nodes.
-Given a doubly-linked list, delete the node at the end of the doubly linked list.
-Note:
-You need not print anything. You’re given the head of the linked list, just return the head of the modified list.
+Problem Statement:
+    A doubly-linked list is a data structure that consists of sequentially linked nodes, and the nodes have reference to both the previous and the next nodes in the sequence of nodes.
+    Given a doubly-linked list, delete the node at the end of the doubly linked list.
+    Note:
+    You need not print anything. You’re given the head of the linked list, just return the head of the modified list.
 Platform: Linked List / Striver A2Z
 Difficulty: Easy
 Practice Link: "https://www.naukri.com/code360/problems/delete-last-node-of-a-doubly-linked-list_8160469?leftPanelTabValue=SUBMISSION"
