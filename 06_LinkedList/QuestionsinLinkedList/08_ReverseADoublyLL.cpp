@@ -1,5 +1,5 @@
 /*
-Problem:   Delete Last Node of a Doubly Linked List
+Problem:  Reverse a Doubly Linked List
 Problem Statement: Given the head of a doubly linked list, reverse the list and return the head of the reversed doubly linked list.
 Note: Driver code will print the returned list in both forward and backward directions
 Platform: Linked List / Striver A2Z
