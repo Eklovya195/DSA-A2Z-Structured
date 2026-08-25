@@ -18,6 +18,18 @@ Finally, backtrack to 0 and visit 1 → Final Output: 0, 2, 4, 3, 1
 ==================================================
 */
 
+/*
+Algorithm:
+    1. Use a visited array to keep track of visited nodes.
+    2. Start DFS from a given node.
+    3. Mark the current node as visited and store it in the result vector.
+    4. Traverse all adjacent nodes of the current node using the adjacency list.
+    5. For each adjacent node that is not visited:
+        ○ Recursively apply DFS on that node.
+    6. When a node has no unvisited neighbors, backtrack to the previous node.
+    7. Repeat until all reachable nodes are visited.
+DFS uses recursion and backtracking to explore the graph fully.
+*/
 
 #include<bits/stdc++.h>
 using namespace std;

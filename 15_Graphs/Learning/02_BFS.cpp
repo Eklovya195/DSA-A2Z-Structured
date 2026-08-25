@@ -18,6 +18,22 @@ Output: [0, 2, 3, 1, 4]
 ==================================================
 */
 
+/*
+Algorithm:
+1. Create a visited array of size V and initialize all values to 0.
+2. Create a queue data structure.
+3. Mark the starting node 0 as visited and push it into the queue.
+4. While the queue is not empty:
+    ○ Take the front element of the queue and remove it.
+    ○ Add this node to the BFS result vector.
+    ○ Traverse all adjacent nodes of this node.
+    ○ If an adjacent node is not visited:
+        ■ Mark it as visited.
+        ■ Push it into the queue.
+5. Continue until the queue becomes empty.
+6. Return the BFS traversal vector.
+This ensures nodes are visited in breadthwise (level order) manner.
+*/
 
 #include<bits/stdc++.h>
 using namespace std;
