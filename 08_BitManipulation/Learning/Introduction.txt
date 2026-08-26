@@ -84,12 +84,31 @@ Bit Manipulation Tricks and Techniques
 A = A ^ B
 B = A ^ B
 A = A ^ B
+
 2. Checking if the i-th Bit is Set
 (1 << i) & num   → set if result ≠ 0
 (num >> i) & 1   → set if result ≠ 0
+
 3. Setting the i-th Bit
 num | (1 << i)
+
 4. Clearing the i-th Bit
 num & ~(1 << i)
+
 5. Toggling the i-th Bit
 num ^ (1 << i)
+
+6. Remove the last set Bit (rightmost)
+ num & (num-1) 
+
+7.Power of 2 or not
+  num & (num-1) == 0 true
+  else false
+
+//some cp level stuff for running code faster
+for odd Checking
+    if(n%2 == 1) for this 
+    use n&1
+
+for n/2 use n>>1 
+    because >>1 means divide by 2
