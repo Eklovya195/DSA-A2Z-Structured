@@ -1,5 +1,7 @@
 //These implementation might be asked in interview
 //Here using array we can only define static memory allocation of fixed sized
+//this will tell you how inbuilt functions work from inside
+
 /*
 Implement the ArrayQueue class: FIFO(First In First Out)
 void push(int x): Adds element x to the end of the queue.

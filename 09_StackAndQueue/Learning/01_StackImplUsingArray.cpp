@@ -1,5 +1,6 @@
 //These implementation might be asked in interview
 //Here using array we can only define static memory allocation of fixed sized
+//this will tell you how inbuilt functions work from inside
 
 /*
 Implement the ArrayStack class: LIFO(Last In first out )
