@@ -116,6 +116,15 @@ Algorithm:
     ● Stack me koi element mini se chhota dikhe
     ⇒ wo real value nahi, encoded value hai
 */
+
+/*
+Push time:
+    encoded = 2*newMin - oldMin
+Pop time:
+    oldMin = 2*currentMin - encoded
+Ye reversible encoding hai
+Isliye ek hi stack kaam kar leta hai
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
