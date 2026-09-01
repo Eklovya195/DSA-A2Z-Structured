@@ -118,7 +118,7 @@ int main(){
 
 /*
 ==================================================================
-Time Complexity:O(4*N)
-Space Complexity: O(2*N) to store ans array
+Time Complexity:O(N)
+Space Complexity: O(N) to store ans array
 ==================================================================
 */
