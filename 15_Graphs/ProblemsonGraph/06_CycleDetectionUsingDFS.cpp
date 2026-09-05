@@ -11,7 +11,17 @@ Output: Yes
 
 /*
 Algorithm:
-    
+    1. Create a visited array to mark visited vertices.
+    2. Since the graph can have multiple connected components, iterate over all vertices.
+    3. For every unvisited vertex:
+        ○ Start a DFS with its parent as -1.
+    4. In DFS:
+        ○ Mark the current node as visited.
+        ○ Traverse all its adjacent nodes.
+        ○ If an adjacent node is not visited, recursively call DFS with current node as parent.
+        ○ If an adjacent node is already visited and is not the parent, a cycle exists.
+    5. If DFS finishes without detecting such a case, no cycle exists.
+    6. If any DFS call detects a cycle, return true. Otherwise, return false.
 */
 
 #include<bits/stdc++.h>
@@ -66,9 +76,9 @@ int main(){
 
 /*
 ==================================================
-Time Complexity: O(N + 2E) + O(N)
-    Reason: BFS traverses all nodes and edges, and an extra loop handles disconnected components.
-Space Complexity: O(N)
-    Reason: Space used by visited array and queue.
+Time Complexity: O(V + E)
+    Reason: Each vertex is visited once and each edge is explored during DFS.
+Space Complexity: O(V + E)
+    Reason: Space used for adjacency list, visited array, and recursion stack.
 ==================================================
 */
