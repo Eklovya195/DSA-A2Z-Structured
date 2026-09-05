@@ -94,6 +94,21 @@ Space: O(n × m) — queue + vis matrix.
 ==================================================
 */
 
+/*
+Algorithm:
+    1. Store the initial color of the starting pixel (sr, sc).
+    2. Create a copy of the image so the original image is not modified directly.
+    3. Use DFS traversal starting from (sr, sc).
+    4. At each pixel:
+        ○ Change its color to newColor.
+        ○ Explore its 4 neighbors (up, right, down, left).
+    5. For each neighbor:
+        ○ Check if it is inside the grid.
+        ○ Check if it has the same initial color.
+        ○ Check if it is not already colored with newColor.
+    6. Recursively apply DFS on valid neighbors.
+    7. Continue until all connected p
+*/
 
 //DFS Approach
 #include<bits/stdc++.h>
