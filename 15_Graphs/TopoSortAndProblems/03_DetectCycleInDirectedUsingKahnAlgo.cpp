@@ -1,31 +1,35 @@
 /*
-Problem:  Topo Sort Problem
+Problem:  Detect Cycle Using Kahn's Algo
 Platform: Graph / Striver A2Z
 Difficulty: Medium
-Practice Link: "https://www.geeksforgeeks.org/problems/topological-sort/1"
+Practice Link: "https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1"
 ==================================================
-Input: V = 4, E = 3, edges[][] = [[3, 0], [1, 0], [2, 0]]
+Input: V = 4, edges[][] = [[0, 1], [1, 2], [2, 0], [2, 3]]
 Output: true
-Explanation: The output true denotes that the order is valid. Few valid Topological orders for the given graph are:
-[3, 2, 1, 0]
-[1, 2, 3, 0]
-[2, 3, 1, 0]
+Explanation: The diagram clearly shows a cycle 0 -> 1 -> 2 -> 0
 ==================================================
 */
 
 /*
-Algorithm:
-    This approach is based on in-degrees of vertices.
-    1. Create an indegree array of size V, initialized to 0.
-    2. For every edge u → v, increment indegree[v].
+Algorithm (Using BFS – Kahn’s Algorithm):
+    A cycle in a directed graph can be detected using Kahn’s Algorithm, which is based on Topological Sorting.
+    Key idea:
+        A Directed Acyclic Graph (DAG) always has a topological ordering containing all vertices.
+        If a graph contains a cycle, some vertices will never get in-degree 0, so they will never be processed.
+    Steps:
+    1. Create an indegree array to store the number of incoming edges for each vertex.
+    2. Traverse the adjacency list and compute indegree of every vertex.
     3. Push all vertices with indegree = 0 into a queue.
-    4. While the queue is not empty:
-        ○ Pop a node and add it to the result.
-        ○ For all its adjacent nodes:
-        ■ Decrease their in-degree by 1.
-        ■ If in-degree becomes 0, push into the queue.
-    5. The order in which nodes are removed from the queue gives a topological sort.
-    This works because nodes with zero in-degree have no dependencies
+    4. Initialize a counter count = 0 to count processed nodes.
+    5. While the queue is not empty:
+        ○ Pop a node from the queue.
+        ○ Increment count.
+        ○ For each neighbor of this node:
+            ■ Decrease its indegree by 1.
+            ■ If indegree becomes 0, push it into the queue.
+    6. After BFS:
+        ○ If count == V, all nodes were processed → no cycle.
+        ○ If count < V, some nodes were not processed → cycle exists.
 */
 
 
@@ -94,9 +98,12 @@ int main(){
 /*
 ==================================================
 Time Complexity: O(V + E)
-    Reason: Each vertex is processed once
-    Each edge is processed once while reducing in-degrees
-Space Complexity: O(V)
-    Reason: In-degree array and queue can store up to V nodes
+    Reason:
+        Each vertex is processed once.
+        Each edge is considered once while updating indegrees.
+Space Complexity: O(V + E)
+    Reason:
+        Adjacency list stores edges.
+        Indegree array and queue take up to O(V) space.
 ==================================================
 */
