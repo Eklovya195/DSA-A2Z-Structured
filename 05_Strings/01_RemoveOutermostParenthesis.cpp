@@ -25,6 +25,8 @@ Approach:
     4. finally return ans
 */
 
+//This was my first intution to solve this problem (Using stack)
+/*
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -58,12 +60,55 @@ int main(){
     cout << ans;
     return 0;
 }
+*/
+
+/*
+==================================================
+Time Complexity: O(N)
+    (single pass)
+Space Complexity: O(N) //stack is used
+==================================================
+*/
+
+//Optimal (No need of stack)
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    string removeOuterParentheses(string s) {
+        string ans = "";
+        int depth = 0;
+        for(char c:s){
+            if(c=='('){
+                depth++;
+                if(depth>1){
+                    ans += c;
+                } 
+            }
+            else{
+                if(depth>1){
+                    ans += c;
+                }
+                depth--;
+            }
+        }
+        return ans;
+    }
+};
+
+int main(){
+    string s = "(()())(())(()(()))";
+    Solution obj;
+    string ans = obj.removeOuterParentheses(s);
+    cout << ans;
+    return 0;
+}
 
 /*
 ==================================================
 Time Complexity: O(N)
     (single pass)
 Space Complexity: O(1)
-    (output excluded)
 ==================================================
 */
