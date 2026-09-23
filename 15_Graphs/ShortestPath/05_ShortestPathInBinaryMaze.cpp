@@ -1,5 +1,5 @@
 /*
-Problem:  1091. Shortest Path in Binary Matrix
+Problem:  1091. Shortest Path in Binary Maze
 Platform: Graph / Striver A2Z
 Difficulty: Medium
 Practice Link: "https://leetcode.com/problems/shortest-path-in-binary-matrix/description/"
