@@ -1,0 +1,27 @@
+In the world of data structures and algorithms, understanding binary trees lays the groundwork for hierarchical
+organisation and efficient data manipulation.
+Up until now, we have studied array, linked list, stack and queues which are the fundamental linear data structures.
+Binary Trees are a different data structure and allow hierarchical organisation and structure of multi-level sequences.
+This resembles a tree with branching at each node expanding the tree in a non-linear fashion.
+
+Just as the folders, subfolders and files are hierarchically arranged in your computer's file system, the binary tree has
+a similar structure with nodes representing folders and their children nodes representing the sub directory or files
+inside it.
+
+Binary Tree: Binary tree is a fundamental hierarchical data structure in computer science that comprises nodes
+arranged in a tree-like structure. It consists of nodes, where each node can have at most two children nodes, known
+as the left child and the right child.
+
+Ancestors in a Binary Tree are those nodes that lie on the path from a particular node to the root node. They are the
+nodes encountered while moving upwards from a specific node through its parent nodes until reaching the root of the
+tree.
+
+
+Different Types of Binary Trees are:
+     1) Full Binary Tree:- every node has either 0 or 2 children
+     2)Complete Binary Tree:- 
+        all levels are completely filled except last level
+        last level has all nodes on left as possible
+    3)Perfect Binary Tree:- all leaf nodes are at same level
+    4)Balanced Binary Tree:- height of a tree is at max logn
+    5)Degenerate Tree:- whenever it is a skew tree(every node has one children)
