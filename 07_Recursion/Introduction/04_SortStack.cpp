@@ -107,6 +107,7 @@ int main() {
 ==================================================
 Complexity Analysis:
 Time Complexity: O(n^2)  n -> size of stack
+    Each insertion may take up to O(n) and is done for n elements.
 Space Complexity: O(n) -> dummy stack takes n space
 ==================================================
 */
