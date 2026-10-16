@@ -8,6 +8,20 @@ Implement pow(x, n), which calculates x raised to the power n (i.e., xn).
 ==================================================
 */
 
+/*
+Key Observation
+    ● Number of even positions = (n + 1) / 2
+    ● Number of odd positions = n / 2
+    For each:
+        ● Even positions → 5^(evenCount)
+        ● Odd positions → 4^(oddCount)
+        OR You just do 20^n/2 if even that ans
+         else multiply 5 also to 20^n/2
+    Final Answer:
+        (5^(evenCount) * 4^(oddCount)) % MOD
+To compute large powers efficiently, we use Binary Exponentiation.
+*/
+
 // Approach(iterative approach):
 #include <bits/stdc++.h>
 using namespace std;
