@@ -67,11 +67,18 @@ int main(){
 ==================================================
 Complexity Analysis:
 Time Complexity: O(n*2^n) — each character is processed once
-Space Complexity: O(n*2^n) — There are 2^n subsets in total, and on average, each subset contains 
-                                n/2 eleemnts
+Space Complexity: O(n*2^n) — (to store all subsequences)
 ==================================================
 */
 
+/*
+Algorithm(Recursion(Inclusive/Exclusive)):
+    1. Start from index 0 with an empty string.
+    2. At each index:
+        ○ Recurse without taking the character.
+        ○ Recurse after taking the character.
+    3. When index reaches n, store the current subsequence.
+*/
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -119,5 +126,6 @@ int main(){
 Complexity Analysis:
 Time Complexity: O(n*2^n) — each character is processed once
 Space Complexity: O(n) — for recursive calls
+    (O(n * 2^n) including ans storage)
 ==================================================
 */
