@@ -53,7 +53,8 @@ Algorithm:
 ==================================================
 */
 
-//Recursive Approach(Include/Exclude):
+//Recursive Approach:
+//You might also use target-candidates[i] in place of sum and no need of sum variable
 #include <bits/stdc++.h>
 using namespace std;
 
