@@ -41,9 +41,12 @@ public:
             ans.push_back(subset);
             return;
         }
+        //outer for loop is cutting slice
+        //cutting size 1 slice -> size 2 slice -> size 3 slice
         for(int i=idx;i<s.size();i++){
             if(ispalindrome(s,idx,i)){
                 subset.push_back(s.substr(idx,i-idx+1));
+                //this function goes deep of each slice and check for further remaining string letters
                 funGenerate(i+1,s,ans,subset);
                 subset.pop_back();
             }
