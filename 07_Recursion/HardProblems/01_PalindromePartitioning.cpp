@@ -75,9 +75,9 @@ int main(){
 /*
 ==================================================
 Complexity Analysis:
-Time Complexity: O(2^n)
-    In the worst case, each position branches into two recursive calls.
-Space Complexity: O(n)
-    Due to recursion depth (call stack).
+Time Complexity: O(2^N * N)
+    All possible partitions are explored, and palindrome checking costs O(N).
+Space Complexity: O(2^N * N) + O(N)
+    For storing all partitions and recursion stack
 ==================================================
 */
