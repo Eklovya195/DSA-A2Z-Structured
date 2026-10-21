@@ -4,8 +4,12 @@ Platform: Recursion / Striver A2Z
 Difficulty: Medium
 Problem Link: "https://leetcode.com/problems/palindrome-partitioning/description/?utm=codolio"
 ==================================================
-Given a string s, partition s such that every substring of the partition is a palindrome. 
-Return all possible palindrome partitioning of s.
+Explanation
+You are given a string s. Your task is to split (partition) the string into substrings such that every
+substring is a palindrome.
+A palindrome reads the same from left to right and right to left.
+You must return all possible such partitions.
+
 
 Input: s = "aab"
 Output: [["a","a","b"],["aa","b"]]
@@ -14,13 +18,13 @@ Output: [["a","a","b"],["aa","b"]]
 
 /*
 Approach:
-We use recursion + backtracking.
+    We use recursion + backtracking.
     At every index, we try to cut the string into substrings.
     For each substring:
         ● If it is a palindrome → choose it
         ● Recurse for the remaining string
         ● Backtrack to try other possibilities
-    The recursion ends when the full string is consumed
+    The recursion ends when the full string is consumed.
 */
 
 #include <bits/stdc++.h>
@@ -60,15 +64,14 @@ public:
     }
 };
 
-
 int main(){
-    string s = "a";
+    string s = "aab";
     Solution obj;
     vector<vector<string>> ans = obj.partition(s);
-    for(auto row:ans){
+    for(const auto& row:ans){
         cout << "[";
-        for(string st:row){
-            cout << st << " ";
+        for(string ans:row){
+            cout << ans << ",";
         }
         cout << "]\n";
     }
