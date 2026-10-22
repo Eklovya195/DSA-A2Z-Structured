@@ -16,6 +16,51 @@ Explanation: There are two ways to climb to the top.
 ==================================================
 */
 
+//This approach is more easy to understand 
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+public:
+    int rec(int level,int n,vector<int> &dp){
+        //base case
+        if(level == n) return 1;
+
+        //check if it is available in dp or not
+        if(dp[level]!=-1) return dp[level];
+
+        int ans = 0;
+        for(int step=1;step<=2;step++){
+            if(level+step<=n){
+                int ways = rec(level+step,n,dp);
+                ans += ways;
+            }
+        }
+        return dp[level] = ans;
+    }
+
+    int climbStairs(int n) {
+        vector<int> dp(n+1,-1);
+        return rec(0,n,dp);
+    }
+};
+
+int main(){
+    int n = 2;
+    Solution obj;
+    cout << obj.climbStairs(n);
+    return 0;
+}
+
+/*
+==================================================
+Complexity Analysis:
+Time Complexity: O(n)  -> instead of whole recursion(2^n)
+    it will check only n times and store these values into dp array
+Space Complexity: O(n+n)  -> recursion + dp array
+==================================================
+*/
+
 /*
 ==================================================
 Key Insight:
@@ -91,6 +136,7 @@ Algorithm
     4. Return final value
 */
 
+/*
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -114,6 +160,7 @@ int main(){
     cout << obj.climbStairs(n);
     return 0;
 }
+*/
 
 /*
 ==================================================
