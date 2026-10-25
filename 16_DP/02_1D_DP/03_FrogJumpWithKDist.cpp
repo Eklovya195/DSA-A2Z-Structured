@@ -22,52 +22,188 @@ Explanation: The frog can jump to the last stone by jumping 1 unit to the 2nd st
 ==================================================
 */
 
+//This Approach will give tle as this is simple recursion approach 
+// but we need to uderstand this first to understand the solution
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// //this is the solution
+// class Solution {
+// public:
+//     int rec(vector<int>& heights,int idx,int k){
+//         if(idx == heights.size()-1) return 0;
+//         int minSteps = INT_MAX;
+//         for(int i=1;i<=k;i++){
+//            if(idx+i<heights.size()){
+//                 int jumps = rec(heights,idx+i,k) + abs(heights[idx]-heights[idx+i]);
+//                 minSteps = min(minSteps,jumps);
+//            }
+//         }
+//         return minSteps;
+//     }
+
+//     int frogJump(vector<int>& heights, int k) {
+//         int n = heights.size();
+//         return rec(heights,0,k);
+//     }
+// };
+
+
+// int main(){
+//     vector<int> heights = {10, 5, 20, 0, 15};
+//     int k = 2;
+//     Solution obj;
+//     cout << obj.frogJump(heights,k);
+//     return 0;
+// }
+
+/*
+==================================================
+Complexity Analysis:
+Time Complexity: O(k^n)
+Space Complexity: O(n)
+    The recursion stack goes up to n in the worst case.
+==================================================
+*/
+
+
 //Approach 1: Memoization Approach
 /*
 Algorithm
 We use recursion with memoization to avoid recalculating the same states again and again.
-    ● Define a function solveUtil(ind) that returns the minimum energy required to reach step ind.
+    ● Define a function rec(ind) that returns the minimum energy required to reach step ind.
     ● Base case:
-        If ind == 0, the cost is 0 because the frog starts there.
+        If ind == n-1, the cost is 0 because the frog reach at the end.
     ● If the answer for ind is already stored in the dp array, return it.
     ● Otherwise, try all jumps from 1 to k:
-        ○ If ind - jump >= 0, calculate the cost of jumping from ind-jump to ind.
+        ○ If ind + jump < n, calculate the cost of jumping from index to index+jump.
         ○ Take the minimum of all possible jump costs.
     ● Store the result in dp[ind] and return it.
-    ● The final answer is solveUtil(n-1)
+    ● The final answer is min of all energy
+*/
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution {
+// public:
+//     int rec(vector<int>& heights,int idx,int k,vector<int> &dp){
+//         if(idx == heights.size()-1) return 0;
+//         if(dp[idx]!=-1) return dp[idx];
+//         int minSteps = INT_MAX;
+//         for(int i=1;i<=k;i++){
+//            if(idx+i<heights.size()){
+//                 int jumps = rec(heights,idx+i,k,dp) + abs(heights[idx]-heights[idx+i]);
+//                 minSteps = min(minSteps,jumps);
+//            }
+//         }
+//         return dp[idx] = minSteps;
+//     }
+
+//     int frogJump(vector<int>& heights, int k) {
+//         int n = heights.size();
+//         vector<int> dp(n,-1);
+//         return rec(heights,0,k,dp);
+//     }
+// };
+
+
+// int main(){
+//     vector<int> heights = {10, 5, 20, 0, 15};
+//     int k = 2;
+//     Solution obj;
+//     cout << obj.frogJump(heights,k);
+//     return 0;
+// }
+
+/*
+==================================================
+Complexity Analysis:
+Time Complexity: O(n * k)
+    For each index, we try up to k jumps, and each state is computed only once due to memoization.
+Space Complexity: O(n)
+    The dp array stores results for all n indices. The recursion stack also goes up to n in the worst case.
+==================================================
+*/
+
+
+//Approach 2: Tablulation Approach
+/*
+Algorithm
+    This approach solves the problem using bottom-up dynamic programming.
+    ● Create a dp array where dp[i] represents the minimum energy required to reach step i.
+    ● Initialize dp[n-1] = 0 because no energy is needed at the start.
+    ● For each step i from n-2 to 0:
+        ○ Try all jumps from 1 to k.
+        ○ If i + j < n, compute:
+                dp[i + j] + abs(height[i] - height[i + j])
+                    ○ Store the minimum of all such values in dp[i].
+    ● The answer is stored in dp[0].
+        This builds the solution step by step without recursion.
 */
 
 #include <bits/stdc++.h>
 using namespace std;
 
+//here moving from n-2 to 0
 // class Solution {
-//   public:
-//     int rec(vector<int> &height,int idx,vector<int> &dp){
-//         //base case
-//         if(idx == 0) return 0;
-//         if(dp[idx]!=-1) return dp[idx];
-//         int minSteps = INT_MAX;
-//         for(int jump=0;jump<)
-//     }
-
-//     int minCost(vector<int>& height) {
-//         int n = height.size();
-//         vector<int> dp(n,-1);
-//         return rec(height,n-1,dp);
+// public:
+//     int frogJump(vector<int>& heights, int k) {
+//         int n = heights.size();
+//         vector<int> dp(n,INT_MAX);
+//         dp[n-1] = 0;
+//         for(int i=n-2;i>=0;i--){
+//             for(int j=1;j<=k;j++){
+//                 if(i+j<n){
+//                     int jumps = dp[i+j] + abs(heights[i]-heights[i+j]);
+//                     dp[i] = min(dp[i],jumps);
+//                 }
+//             }
+//         }
+//         return dp[0];
 //     }
 // };
 
+//use this if you want bottom to up like from 0 to n-1
+class Solution {
+public:
+    int frogJump(vector<int>& heights, int k) {
+        int n = heights.size();
+        vector<int> dp(n,INT_MAX);
+        dp[0] = 0;
+        for(int i=1;i<n;i++){
+            int minSteps = INT_MAX;
+            for(int j=1;j<=k;j++){
+                if(i-j>=0){
+                    int jumps = dp[i-j] + abs(heights[i]-heights[i-j]);
+                    minSteps = min(minSteps,jumps);
+                }
+            }
+            dp[i] = minSteps;
+        }
+        return dp[n-1];
+    }
+};
+
+
 int main(){
-    vector<int> stones = {0,1,3,5,6,8,12,17};
+    vector<int> heights = {10, 5, 20, 0, 15};
+    int k = 2;
     Solution obj;
-    cout << obj.minCost(stones);
+    cout << obj.frogJump(heights,k);
     return 0;
 }
 
 /*
 ==================================================
 Complexity Analysis:
-Time Complexity: O(2^n)  ->  recursion(2^n)
-Space Complexity: O(n)  -> recursion
+Time Complexity: O(n * k)
+    For each index, we try up to k jumps, and each state is computed only once due to memoization.
+Space Complexity: O(n)
+    The dp array stores results for all n indices. The recursion stack also goes up to n in the worst case.
 ==================================================
 */
+
+
+// NOTE:- We can reduce the space complexity from n to k but not to 1
