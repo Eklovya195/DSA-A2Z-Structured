@@ -3,6 +3,11 @@ Problem: 1423. Maximum Points You Can Obtain from Cards
 Platform: Sliding Window And Two pointers / Striver A2Z
 Difficulty: Medium
 Practice Link: "https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/description/"
+Some Practice Question for Constant Window: "https://www.geeksforgeeks.org/problems/first-negative-integer-in-every-window-of-size-k3345/1"
+                    "https://www.geeksforgeeks.org/problems/count-occurences-of-anagrams5839/1"
+                    "https://leetcode.com/problems/sliding-subarray-beauty/description/"
+                    "https://leetcode.com/problems/find-all-anagrams-in-a-string/description/"
+                    "https://www.interviewbit.com/problems/sliding-window-maximum/"
 ==================================================
 Input: cardPoints = [1,2,3,4,5,6,1], k = 3
 Output: 12
