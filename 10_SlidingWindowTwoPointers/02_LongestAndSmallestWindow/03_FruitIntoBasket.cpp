@@ -10,6 +10,45 @@ Explanation: We can pick from all 3 trees.
 ==================================================
 */
 
+//Approach using Aditya verma playlist template of sliding window
+//Optimal Solution using map
+/*
+class Solution{
+  public:
+    int totalFruits(vector<int>& fruits){
+        //using unordered map
+        int n = fruits.size();
+        int i=0,j=0;
+        int maxfruits = 0;
+        unordered_map<int,int> mp;
+        while(j<n){
+            mp[fruits[j]]++;
+            //if mp size greater than 2 beacuse we had only 2 baskets
+            while(mp.size()>2){
+                mp[fruits[i]]--;
+                if(mp[fruits[i]]==0){
+                    mp.erase(fruits[i]);
+                }
+                i++;
+            }
+            maxfruits = max(maxfruits,j-i+1);
+            j++;
+        }
+        return maxfruits;
+    }
+};
+*/
+
+/*
+==================================================
+Time Complexity: O(n)
+Space Complexity: O(1)
+    at most 2 fruit types in map so constant
+==================================================
+*/
+
+
+
 /*
 Problem Statement: 
     You are given an array fruits where fruits[i] represents the type of fruit on the i-th tree.

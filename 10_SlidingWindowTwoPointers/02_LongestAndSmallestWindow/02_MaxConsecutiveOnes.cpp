@@ -19,6 +19,38 @@ Problem Statement:
     performing at most k flips
 */
 
+//Learned from Aditya Verma Playlist approach
+/*
+class Solution {
+public:
+    int longestOnes(vector<int>& nums, int k) {
+        int n = nums.size();
+        int maxlen = 0,i = 0,j = 0;
+        while(j<n){
+            if(nums[j]==0){
+                k--;
+            }
+            //if no of zeroes gretaer than k
+            while(k<0){
+                if(nums[i]==0) k++;
+                i++;
+            }
+            //finding the maximum length
+            maxlen = max(maxlen,j-i+1);
+            j++;
+        }
+        return maxlen;
+    }
+};
+*/
+
+/*
+==================================================
+Time Complexity: O(n)
+Space Complexity: O(1)
+==================================================
+*/
+
 //Appraoch 1: Brute force 
 /*
 Algorithm:
@@ -140,9 +172,6 @@ Algorithm:
         Update maximum window length at each step.
         This avoids an inner loop and keeps logic simple
 */
-
-
-
 
 #include<bits/stdc++.h>
 using namespace std;

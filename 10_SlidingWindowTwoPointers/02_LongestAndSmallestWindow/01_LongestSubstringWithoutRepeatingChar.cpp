@@ -27,6 +27,74 @@ Algorithm:
     Return the maximum length at the end.
 */
 
+//learned from Aditya Verma Playlist of sliding window as templete is in image 
+//solution using map is 
+/*
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        //using unordered map
+        int n = s.size();
+        unordered_map<char,int> mp;
+        int maxlen = 0,i = 0,j = 0;
+        //templete used in every code
+        while(j<n){
+            mp[s[j]]++;
+            //while freq gretaer than 1
+            while(mp[s[j]]>1){
+                mp[s[i]]--;
+                i++;
+            }
+            //if all char are of freq 1
+            if(mp[s[j]] == 1){
+                maxlen = max(maxlen,j-i+1);
+            }
+            j++;
+        }
+        return maxlen;
+    }
+};
+*/
+
+
+//solution using freq array
+/*
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        //using freq array 
+        int n = s.size();
+        int freq[256] = {0};
+        int maxlen = 0,i = 0,j = 0;
+        while(j<n){
+            //here you cannot use s[j]-'a' because
+            //here ascii value contains for all symbols,digits,letters 
+            //also write unsigned char(s[j]) which is good practice
+            freq[s[j]]++;
+            //while freq greater than 1
+            while(freq[s[j]]>1){
+                freq[s[i]]--;
+                i++;
+            }
+            //if freq equal to 1
+            maxlen = max(maxlen,j-i+1);
+            j++;
+        }
+        return maxlen;
+    }
+};
+*/
+
+/*
+==================================================
+Time Complexity: O(n)
+    Each character is processed once using two pointers.
+Space Complexity: O(256) == O(1)
+    Fixed-size freq array of 256 characters
+==================================================
+*/
+
+
 //Brute force Appraoch
 /*
 #include<bits/stdc++.h>
@@ -73,6 +141,7 @@ Space Complexity: O(256) == O(1)
     Fixed-size seen boolean array of 256 characters
 ==================================================
 */
+
 
 //Sliding Window Approach (Optimal Solution)
 /*

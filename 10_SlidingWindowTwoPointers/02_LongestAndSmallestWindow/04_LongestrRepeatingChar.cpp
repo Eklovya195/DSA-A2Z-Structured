@@ -21,6 +21,34 @@ Problem Statement:
 
 */
 
+//My way of undestanding is better through this way otherwise appraoch is same
+/*
+class Solution {
+public:
+    int characterReplacement(string s, int k) {
+        int n = s.size();
+        int maxlen = 0,i = 0,j = 0;
+        int freq[26] = {0};
+        int maxfreq = 0;
+        while(j<n){
+            freq[s[j]-'A']++;
+            //keeping track of max in map
+            maxfreq = max(maxfreq,freq[s[j]-'A']);
+            int len = j-i+1;
+            //if we need to do opern more than k times
+            if((len-maxfreq)>k){
+                freq[s[i]-'A']--;
+                i++;
+            }
+            //finding the maximum length
+            maxlen = max(maxlen,j-i+1);
+            j++;
+        }
+        return maxlen;
+    }
+};
+*/
+
 //Appraoch 1: Brute force 
 /*
 Algorithm:
