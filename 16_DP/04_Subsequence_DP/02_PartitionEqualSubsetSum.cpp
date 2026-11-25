@@ -126,7 +126,7 @@ int main(){
 ==================================================
 Complexity Analysis:
 Time Complexity: O(N*k)
-    Every cell in the triangle is computed once.
+    There are N*K states, each solved once.
 Space Complexity: O(N*k) + O(N)
     DP table plus recursion stack depth.
 ==================================================
@@ -207,7 +207,7 @@ int main(){
 ==================================================
 Complexity Analysis:
 Time Complexity: O(N*k)
-    Entire triangular grid is processed once.
+    Two nested loops.
 Space Complexity: O(N*k)
     DP table stores results for all cells
 ==================================================
@@ -283,7 +283,7 @@ int main(){
 ==================================================
 Complexity Analysis:
 Time Complexity: O(N*k)
-    Every element in the triangle is processed once.
+    Two nested loops.
 Space Complexity: O(k)
     Only one row is stored at any time
 ==================================================
